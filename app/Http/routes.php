@@ -20,10 +20,10 @@ Route::get('1',function(){
     #    'content'=>'test content'
     #]);
     $post=\App\Post::find(1);
+    $post->delete();
     
-    
-    $post->title=' saved title';
-    $post->content='saved content';
-    $post->save();
+    #$post->title=' saved title';
+    #$post->content='saved content';
+    #$post->save();
     
 });
