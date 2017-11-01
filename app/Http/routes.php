@@ -15,15 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('1',function(){
-    #\App\Post::create([
-    #    'title'=>'test title',
-    #    'content'=>'test content'
-    #]);
-    #$post=\App\Post::find(1);
-    #$post->delete();
-    
-    #$post->title=' saved title';
-    #$post->content='saved content';
-    #$post->save();
+    $post=\App\Post::find(1);
+    foreach($post->comments as $comment){
+        echo $comment->content.'<br>';
+    }
     
 });
