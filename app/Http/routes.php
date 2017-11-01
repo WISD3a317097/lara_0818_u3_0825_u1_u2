@@ -19,7 +19,7 @@ Route::get('1',function(){
     #    'title'=>'test title',
     #    'content'=>'test content'
     #]);
-    $post=\App\Post::all();
+    $post=\App\Post::find(1);
     dd($post);
     #$post->title=' test title';
     #$post->content='test content';
