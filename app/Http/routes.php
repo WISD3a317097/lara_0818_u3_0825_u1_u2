@@ -21,12 +21,9 @@ Route::get('1',function(){
     #]);
     $post=\App\Post::find(1);
     
-    $post->update([
-        'title'=>'test title',
-        'content'=>'test content'
-    ]);#dd($post);
-    #$post->title=' test title';
-    #$post->content='test content';
-    #$post->save();
+    
+    $post->title=' saved title';
+    $post->content='saved content';
+    $post->save();
     
 });
