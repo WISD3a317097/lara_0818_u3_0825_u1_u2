@@ -11,10 +11,20 @@ class PostsTableSeeder extends Seeder
      */
     public function run()
     {
-        foreach(range(1,20) as $number){
+        Post::truncate();
+        $faker = Faker::create('zh_TW');
+        $total = 20;
+        foreach(range(1, 20) as $number) {
             Post::create([
-                'title'=>'title'.$number,
-                'contnet'=>'content'.$number,
+                /*
+                'title' => 'title '.$number,
+                'content' => 'content '.$number,
+                */
+                'title'	=>	$faker->sentence,
+                'content'	=>	$faker->paragraph,
+                'is_feature' => rand(0, 1),
+                'created_at' => Carbon::now()->subDays($total - $number),
+                'updated_at' => Carbon::now()->subDays($total - $number),
             ]);
         }
     }
